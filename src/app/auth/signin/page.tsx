@@ -1,0 +1,60 @@
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+import { Metadata } from "next";
+import DefaultLayout from "@/components/Layouts/DefaultLaout";
+import Signin from "@/components/Auth/Signin";
+
+export const metadata: Metadata = {
+  title: "Next.js Login Page | NextAdmin - Next.js Dashboard Kit",
+  description: "This is Next.js Login Page NextAdmin Dashboard Kit",
+};
+
+const SignIn: React.FC = () => {
+  return (
+    <DefaultLayout>
+      <Breadcrumb pageName="Sign In" />
+
+      <div className="rounded-[10px] bg-white shadow-1  dark:shadow-card">
+        <div className="flex flex-wrap items-center justify-center">
+          <div className="w-full xl:w-1/2">
+            <div className="w-full p-4 sm:p-12.5 xl:p-15">
+              <Signin />
+            </div>
+          </div>
+
+          <div className="hidden w-full p-7.5  xl:block xl:w-1/2">
+            <div className="overflow-hidden rounded-2xl bg-[#fbf7e8] px-12.5 pt-12.5  ">
+              <Link className="mb-10 inline-block" href="/">
+                <Image
+                  className="dark:hidden"
+                  src={"/images/logo/logo(RSP).svg"}
+                  alt="Logo"
+                  width={176}
+                  height={32}
+                />
+              </Link>
+              <p className="mb-3 text-xl font-medium text-green-600 dark:text-white">
+                Sign in to your account
+              </p>
+
+              <h1 className="mb-4 text-2xl font-bold text-green-600 dark:text-white sm:text-heading-3">
+                Welcome Back!
+              </h1>
+
+              <p className="w-full max-w-[375px] font-medium text-green-600 dark:text-dark-6">
+                Please sign in to your account by completing the necessary
+                fields below
+              </p>
+
+              <div className="mt-31"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </DefaultLayout>
+  );
+};
+
+export default SignIn;
